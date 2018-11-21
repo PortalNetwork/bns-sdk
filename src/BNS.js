@@ -1,5 +1,9 @@
 "use strict"
 import EthereumNameService from "./EthereumNameService"
+import EthereumClassicNameService from "./EthereumClassicNameService"
+import WanchainNameService from "./WanchainNameService"
+import QuarkChainNameService from "./QuarkChainNameService"
+import ICONNameService from "./ICONNameService"
 
 export class Ethereum {
   constructor(config) {
@@ -18,10 +22,10 @@ export class EtheruemClassic {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = ""
     }
 
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+    this.EthereumClassicNameService = new EthereumClassicNameService(this.restURL)
   }
 }
 
@@ -30,10 +34,10 @@ export class Wanchain {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = ""
     }
 
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+    this.WanchainNameService = new WanchainNameService(this.restURL)
   }
 }
 
@@ -42,9 +46,21 @@ export class QuarkChain {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = ""
     }
 
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+    this.QuarkChainNameService = new QuarkChainNameService(this.restURL)
+  }
+}
+
+export class ICON {
+  constructor(config) {
+    if (config && config.restURL && config.restURL !== "") {
+      this.restURL = config.restURL
+    } else {
+      this.restURL = ""
+    }
+
+    this.ICONNameService = new ICONNameService(this.restURL)
   }
 }
