@@ -2,13 +2,12 @@
 import {
   registryInit,
   getResolver,
-} from "./helper/wns/registryService";
+} from "./helper/tns/registryService";
 import {
   resolverInit,
   getAddress
-} from "./helper/wns/resolverService";
-
-class WanchainNameService {
+} from "./helper/tns/resolverService";
+class TomochainNameService {
   // Provider URL
   constructor(restURL, networkId) {
     this.restURL = restURL;
@@ -29,4 +28,4 @@ class WanchainNameService {
   }
 }
 
-export default WanchainNameService
+export default TomochainNameService
