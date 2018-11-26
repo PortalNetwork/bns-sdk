@@ -17,7 +17,7 @@ async function getResolver() {
 	try {
 		const resolver = await ethereum.EthereumNameService.getResolver("baerwerew.eth")
 		console.log(resolver);
-		const addr = await ethereum.EthereumNameService.getAddress("baerwerew.eth", resolver);
+		const addr = await ethereum.EthereumNameService.getAddress("baerwerew.eth");
 		console.log(addr);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)

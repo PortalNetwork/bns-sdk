@@ -24,48 +24,6 @@ export const registryInit = (provider, networkId) => {
 }
 
 /**
- * @description 
- * 
- * Example Usage: 
- *   entries("foobar");  // 只需搜尋需要註冊的名稱
- * 
- * @param {*} name 
- * @param {*} label
- * @param {*} owner
- */
-export const setSubnodeOwner = async (name, label, owner) => {
-  try {
-    // name 要用 namehash
-    let byteData = "0x" + 		
-                abi.methodID("setSubnodeOwner", [ "bytes32", "bytes32", "address" ]).toString("hex") + 		
-                abi.rawEncode([ "bytes32", "bytes32", "address" ], [ namehash.hash(name), web3.sha3(label), owner ]).toString("hex");
-    return byteData;
-  } catch (err) {
-    console.log('setSubnodeOwner: ', name, label, owner, err);
-    return 'setSubnodeOwner error';
-  }
-}
-
-/**
- * 
- * @param {*} name 
- * @param {*} resolver 
- */
-export const setResolver = async (name, resolver) => {
-  try {
-    console.log("name: ", namehash.hash(name));
-    // name 要用 namehash
-    let byteData = "0x" + 		
-                abi.methodID("setResolver", [ "bytes32", "address" ]).toString("hex") + 		
-                abi.rawEncode([ "bytes32", "address" ], [ namehash.hash(name), resolver ]).toString("hex");
-    return byteData;
-  } catch (err) {
-    console.log('setResolver: ', name, resolver, err);
-    return 'startAuctionsAndBid error';
-  }
-}
-
-/**
  * 
  * @param {*} name 
  */
@@ -74,15 +32,6 @@ export const getResolver = async (name) => {
     return await registry.resolver(namehash.hash(name));
   } catch (err) {
     console.log('getResolver: ', name, err);
-    return 'getResolver error';
-  }
-}
-
-export const owner = async (name) => {
-  try {
-    return await registry.owner(namehash.hash(name));
-  } catch (err) {
-    console.log('owner: ', name, err);
     return 'getResolver error';
   }
 }

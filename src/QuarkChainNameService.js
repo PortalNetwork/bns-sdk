@@ -22,7 +22,8 @@ class QuarkChainNameService {
     return resolverAddr;
   }
 
-  async getAddress(name, resolverAddr) {
+  async getAddress(name) {
+    const resolverAddr = await getResolver(name);
     resolverInit(this.restURL, resolverAddr);
     const addr = await getAddress(name);
     return addr;

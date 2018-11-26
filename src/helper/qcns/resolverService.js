@@ -49,8 +49,8 @@ export const getAddress = async (name) => {
  */
 export const getSupportsInterface = async (support) => {
   try {
-    const content = await resolver.supportsInterface(support);
-    return content;
+    const isSupport = await resolver.supportsInterface(support);
+    return isSupport;
   } catch (err) {
     console.log('getSupportsInterface: ', support, err);
     return 'getSupportsInterface not found';
