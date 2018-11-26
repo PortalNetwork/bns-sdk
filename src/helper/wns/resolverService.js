@@ -29,26 +29,6 @@ export const getContent = async (name) => {
 /**
  * 
  * @param {*} name 
- * @param {*} address 
- */
-export const setAddress = async (name, address) => {
-  try {
-    // name 要用 namehash
-    console.log("name: ", name,"namehash: ", namehash.hash(name));
-    console.log("address:", address);
-    let byteData = "0x" +
-      abi.methodID("setAddr", ["bytes32", "address"]).toString("hex") +
-      abi.rawEncode(["bytes32", "address"], [namehash.hash(name), address]).toString("hex");
-    return byteData;
-  } catch (err) {
-    console.log('setAddress: ', name, address, err);
-    return 'setAddress error';
-  }
-}
-
-/**
- * 
- * @param {*} name 
  */
 export const getAddress = async (name) => {
   try {
