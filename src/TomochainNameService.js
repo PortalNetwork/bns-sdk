@@ -1,22 +1,22 @@
 "use strict"
 import {
   registryInit,
-  getResolver
-} from "./helper/ecns/registryService";
+  getResolver,
+} from "./helper/tns/registryService";
 import {
   resolverInit,
   getAddress
-} from "./helper/ecns/resolverService";
-
-class EthereumClassicNameService {
+} from "./helper/tns/resolverService";
+class TomochainNameService {
   // Provider URL
-  constructor(restURL) {
-    this.restURL = restURL
+  constructor(restURL, networkId) {
+    this.restURL = restURL;
+    this.networkId = networkId;
   }
 
   async getResolver(name) {
     // TODO using web3 to fetch data
-    registryInit(this.restURL);
+    registryInit(this.restURL, this.networkId);
     const resolverAddr = await getResolver(name);
     return resolverAddr;
   }
@@ -29,4 +29,4 @@ class EthereumClassicNameService {
   }
 }
 
-export default EthereumClassicNameService
+export default TomochainNameService

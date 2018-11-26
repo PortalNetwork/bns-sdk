@@ -1,27 +1,33 @@
 "use strict"
 import EthereumNameService from "./EthereumNameService"
+import EthereumClassicNameService from "./EthereumClassicNameService"
+import WanchainNameService from "./WanchainNameService"
+import QuarkChainNameService from "./QuarkChainNameService"
+import TomochainNameService from "./TomochainNameService"
 
 export class Ethereum {
   constructor(config) {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
+      this.networkId = config.networkId;
     } else {
       this.restURL = "https://mainnet.infura.io"
+      this.networkId = '1';
     }
-
-    this.EthereumNameService = new EthereumNameService(this.restURL)
+    this.EthereumNameService = new EthereumNameService(this.restURL, this.networkId)
   }
 }
 
-export class EtheruemClassic {
+export class EthereumClassic {
   constructor(config) {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
+      this.networkId = config.networkId;
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = "https://mainnet.infura.io"
+      this.networkId = '1';
     }
-
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+    this.EthereumClassicNameService = new EthereumClassicNameService(this.restURL, this.networkId)
   }
 }
 
@@ -29,11 +35,12 @@ export class Wanchain {
   constructor(config) {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
+      this.networkId = config.networkId;
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = "http://wanchain.portal.network"
+      this.networkId = '1';
     }
-
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+    this.WanchainNameService = new WanchainNameService(this.restURL, this.networkId)
   }
 }
 
@@ -41,10 +48,24 @@ export class QuarkChain {
   constructor(config) {
     if (config && config.restURL && config.restURL !== "") {
       this.restURL = config.restURL
+      this.networkId = config.networkId;
     } else {
-      this.restURL = "https://api.nel.group/api/testnet"
+      this.restURL = "https://mainnet.infura.io"
+      this.networkId = '1';
     }
+    this.QuarkChainNameService = new QuarkChainNameService(this.restURL, this.networkId)
+  }
+}
 
-    //this.DataRetrieval = new DataRetrieval(this.restURL)
+export class Tomochain {
+  constructor(config) {
+    if (config && config.restURL && config.restURL !== "") {
+      this.restURL = config.restURL
+      this.networkId = config.networkId;
+    } else {
+      this.restURL = "https://mainnet.infura.io"
+      this.networkId = '1';
+    }
+    this.TomochainNameService = new TomochainNameService(this.restURL, this.networkId)
   }
 }

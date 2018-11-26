@@ -1,18 +1,31 @@
 "use strict"
-
+import {
+  registryInit,
+  getResolver,
+} from "./helper/ens/registryService";
+import {
+  resolverInit,
+  getAddress
+} from "./helper/ens/resolverService";
 class EthereumNameService {
   // Provider URL
-  constructor(restURL) {
-    this.restURL = restURL
+  constructor(restURL, networkId) {
+    this.restURL = restURL;
+    this.networkId = networkId;
   }
 
   async getResolver(name) {
     // TODO using web3 to fetch data
-    console.log(name);
+    registryInit(this.restURL, this.networkId);
+    const resolverAddr = await getResolver(name);
+    return resolverAddr;
   }
 
   async getAddress(name) {
-    
+    const resolverAddr = await getResolver(name);
+    resolverInit(this.restURL, resolverAddr);
+    const addr = await getAddress(name);
+    return addr;
   }
 }
 
