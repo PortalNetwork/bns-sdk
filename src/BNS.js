@@ -57,8 +57,6 @@ export class QuarkChain {
   }
 }
 
-
-
 export class Tomochain {
   constructor(config) {
     if (config && config.restURL && config.restURL !== "") {
