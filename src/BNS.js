@@ -37,7 +37,6 @@ export class Wanchain {
       this.restURL = config.restURL
       this.networkId = config.networkId;
     } else {
-
       this.restURL = "http://wanchain.portal.network"
       this.networkId = '1';
     }
@@ -51,7 +50,6 @@ export class QuarkChain {
       this.restURL = config.restURL
       this.networkId = config.networkId;
     } else {
-
       this.restURL = "https://mainnet.infura.io"
       this.networkId = '1';
     }
