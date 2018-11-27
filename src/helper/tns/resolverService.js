@@ -31,7 +31,6 @@ export const getContent = async (name) => {
  * 
  * @param {*} name 
  */
-
 export const getMultihash = async (name, key) => {
   try {
     const content = await resolver.multihash(namehash.hash(name), key);
@@ -46,7 +45,6 @@ export const getMultihash = async (name, key) => {
  * 
  * @param {*} name 
  */
-
 export const getAddress = async (name) => {
   try {
     const address = await resolver.addr(namehash.hash(name));
