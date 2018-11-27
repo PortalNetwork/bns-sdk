@@ -48,7 +48,6 @@ const resolverInterface = [
 			{
 				"name": "node",
 				"type": "bytes32"
-
 			}
 		],
 		"name": "content",
@@ -226,7 +225,6 @@ const resolverInterface = [
 		"type": "function"
 	},
 	{
-
 				"type": "address"
 			}
 		],
@@ -362,7 +360,6 @@ Resolver.prototype.content = function(name, callback) {
 /**
  * 
  * @param {*} name 
-
  * @param {*} callback 
  */
 Resolver.prototype.multihash = function(name, key, callback) {
