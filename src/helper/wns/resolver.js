@@ -461,18 +461,6 @@ function Resolver(web3, address) {
 /**
  * 
  * @param {*} name 
- * @param {*} content 
- * @param {*} callback 
- */
-Resolver.prototype.setContent = function (name, content, callback) {
-  return this.resolverPromise.then(function (resolver) {
-    return resolver.setContentAsync(name, content);
-  });
-}
-
-/**
- * 
- * @param {*} name 
  * @param {*} callback 
  */
 Resolver.prototype.content = function (name, callback) {
@@ -484,14 +472,13 @@ Resolver.prototype.content = function (name, callback) {
 /**
  * 
  * @param {*} name 
- * @param {*} address 
  * @param {*} callback 
  */
-Resolver.prototype.setAddr = function (name, address, callback) {
-  return this.resolverPromise.then(function (resolver) {
-    return resolver.setAddrAsync(name, address);
-  })
-}
+Resolver.prototype.multihash = function (name, callback) {
+	return this.resolverPromise.then(function (resolver) {
+	  return resolver.multihashAsync(name);
+	})
+  }
 
 /**
  * 

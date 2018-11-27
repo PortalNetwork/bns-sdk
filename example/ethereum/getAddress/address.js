@@ -4,15 +4,15 @@ const ethereum = new Ethereum({
 	networkId: '3'
 })
 
-async function getResolver() {
+async function getAddress() {
 	try {
-		const resolver = await ethereum.EthereumNameService.getResolver("portalnetwork.eth")
-		console.log(resolver);
+		const addr = await ethereum.EthereumNameService.getAddress("portalnetwork.eth");
+		console.log(addr);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)
 		throw err
 	}
 }
 
-getResolver();
+getAddress();
 

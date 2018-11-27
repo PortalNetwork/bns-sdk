@@ -35,3 +35,13 @@ export const getResolver = async (name) => {
     return 'getResolver error';
   }
 }
+
+export const owner = async (name) => {
+  try {
+    //setWeb3Provider();
+    return await registry.owner(namehash.hash(name));
+  } catch (err) {
+    console.log('owner: ', name, err);
+    return 'owner error';
+  }
+}

@@ -31,6 +31,20 @@ export const getContent = async (name) => {
  * 
  * @param {*} name 
  */
+export const getMultihash = async (name) => {
+  try {
+    const multihash = await resolver.multihash(namehash.hash(name));
+    return multihash;
+  } catch (err) {
+    console.log('getMultihash: ', name, err);
+    return 'getMultihash not found';
+  }
+}
+
+/**
+ * 
+ * @param {*} name 
+ */
 export const getAddress = async (name) => {
   try {
     const address = await resolver.addr(namehash.hash(name));

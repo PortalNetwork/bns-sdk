@@ -10,9 +10,9 @@ let registry = null;
 const getQcnsRegistryAddress = (networkId = '1') => {
   switch (networkId) {
     case '1':
-      return '0xf0A2efAa0B5dbc592CcF8F6d12Ffd6c2C6332240f05d8fc2';
+      return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
     case '3':
-      return '0xf0A2efAa0B5dbc592CcF8F6d12Ffd6c2C6332240f05d8fc2';
+      return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
     default:
       return '0x0';
   }
@@ -31,7 +31,6 @@ export const registryInit = (provider, networkId) => {
  */
 export const getResolver = async (name) => {
   try {
-    //setWeb3Provider();
     return await registry.resolver(namehash.hash(name));
   } catch (err) {
     console.log('getResolver: ', name, err);
@@ -41,7 +40,6 @@ export const getResolver = async (name) => {
 
 export const owner = async (name) => {
   try {
-    //setWeb3Provider();
     return await registry.owner(namehash.hash(name));
   } catch (err) {
     console.log('owner: ', name, err);
