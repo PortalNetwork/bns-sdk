@@ -1,6 +1,6 @@
 {
   "name": "bns-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library for BNS",
   "engines": {
     "node": ">=8.11.0"
@@ -20,7 +20,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "buffer": "^5.1.0",
-    "mocha": "^5.0.1"
+    "eth-ens-namehash": "^2.0.8",
+    "ethereumjs-abi": "^0.6.5",
+    "mocha": "^5.0.1",
+    "quarkchain-web3": "^0.2.2",
+    "web3": "^0.20.2"
   },
   "devDependencies": {
     "@types/node": "^10.5.2",
@@ -35,7 +39,7 @@
     "flow-bin": "^0.81.0",
     "mocha": "^5.2.0",
     "node-mocks-http": "^1.7.0",
-    "nodemon": "^1.8.1",
+    "nodemon": "^1.18.7",
     "nyc": "^13.0.1",
     "prettier": "^1.14.3",
     "sinon": "^6.3.3",
