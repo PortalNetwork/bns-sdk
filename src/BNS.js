@@ -4,6 +4,7 @@ import EthereumClassicNameService from "./EthereumClassicNameService"
 import WanchainNameService from "./WanchainNameService"
 import QuarkChainNameService from "./QuarkChainNameService"
 import TomochainNameService from "./TomochainNameService"
+import ICONNameService from "./ICONNameService"
 
 export class Ethereum {
   constructor(config) {
@@ -67,5 +68,17 @@ export class Tomochain {
       this.networkId = '1';
     }
     this.TomochainNameService = new TomochainNameService(this.restURL, this.networkId)
+  }
+}
+
+export class ICON {
+  constructor(config) {
+    if (config && config.restURL && config.restURL !== "") {
+      this.restURL = config.restURL
+    } else {
+      this.restURL = ""
+    }
+
+    this.ICONNameService = new ICONNameService(this.restURL)
   }
 }
