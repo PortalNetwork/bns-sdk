@@ -1,0 +1,16 @@
+{
+    "name": "address",
+    "version": "1.0.0",
+    "description": "address",
+    "main": "address.js",
+    "scripts": {
+      "test": "echo no tests yet",
+      "start": "node address.js"
+    },
+    "keywords": [
+      "bns",
+      "example"
+    ],
+    "license": "MIT"
+  }
+  

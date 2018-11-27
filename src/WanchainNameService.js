@@ -5,7 +5,8 @@ import {
 } from "./helper/wns/registryService";
 import {
   resolverInit,
-  getAddress
+  getAddress,
+  getContent
 } from "./helper/wns/resolverService";
 
 class WanchainNameService {
@@ -23,10 +24,19 @@ class WanchainNameService {
   }
 
   async getAddress(name) {
+    registryInit(this.restURL, this.networkId);
     const resolverAddr = await getResolver(name);
     resolverInit(this.restURL, resolverAddr);
     const addr = await getAddress(name);
     return addr;
+  }
+
+  async getContent(name) {
+    registryInit(this.restURL, this.networkId);
+    const resolverAddr = await getResolver(name);
+    resolverInit(this.restURL, resolverAddr);
+    const content = await getContent(name);
+    return content;
   }
 }
 

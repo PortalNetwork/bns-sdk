@@ -1,0 +1,16 @@
+{
+    "name": "resolver",
+    "version": "1.0.0",
+    "description": "resolver",
+    "main": "resolver.js",
+    "scripts": {
+      "test": "echo no tests yet",
+      "start": "node content.js"
+    },
+    "keywords": [
+      "bns",
+      "example"
+    ],
+    "license": "MIT"
+  }
+  

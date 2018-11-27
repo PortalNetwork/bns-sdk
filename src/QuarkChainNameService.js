@@ -1,11 +1,12 @@
 "use strict"
 import {
   registryInit,
-  getResolver,
+  getResolver
 } from "./helper/qcns/registryService";
 import {
   resolverInit,
-  getAddress
+  getAddress,
+  getContent
 } from "./helper/qcns/resolverService";
 
 class QuarkChainNameService {
@@ -23,11 +24,21 @@ class QuarkChainNameService {
   }
 
   async getAddress(name) {
+    registryInit(this.restURL, this.networkId);
     const resolverAddr = await getResolver(name);
     resolverInit(this.restURL, resolverAddr);
     const addr = await getAddress(name);
     return addr;
   }
+
+  async getContent(name) {
+    registryInit(this.restURL, this.networkId);
+    const resolverAddr = await getResolver(name);
+    resolverInit(this.restURL, resolverAddr);
+    const content = await getContent(name);
+    return content;
+  }
+
 }
 
 export default QuarkChainNameService
