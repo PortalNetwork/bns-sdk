@@ -461,7 +461,6 @@ function Resolver(web3, address) {
 /**
  * 
  * @param {*} name 
-
  * @param {*} callback 
  */
 Resolver.prototype.content = function(name, callback) {
@@ -473,7 +472,6 @@ Resolver.prototype.content = function(name, callback) {
 /**
  * 
  * @param {*} name 
-
  * @param {*} callback 
  */
 Resolver.prototype.multihash = function(name, callback) {
