@@ -4,6 +4,8 @@ const abi = require('ethereumjs-abi');
 const Web3 = require('web3');
 const namehash = require('eth-ens-namehash');
 let web3 = new Web3();
+let registry = null;
+
 
 export const getEcnsRegistryAddress = (networkId = '1') => {
   switch (networkId) {
@@ -35,3 +37,14 @@ export const getResolver = async (name) => {
     return 'getResolver error';
   }
 }
+
+export const owner = async (name) => {
+  try {
+    //setWeb3Provider();
+    return await registry.owner(namehash.hash(name));
+  } catch (err) {
+    console.log('owner: ', name, err);
+    return 'owner error';
+  }
+}
+
