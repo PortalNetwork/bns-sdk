@@ -6,7 +6,6 @@ const namehash = require('eth-ens-namehash');
 let web3 = new Web3();
 let registry = null;
 
-
 export const getEcnsRegistryAddress = (networkId = '1') => {
   switch (networkId) {
     case '1':
