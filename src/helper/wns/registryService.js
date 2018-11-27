@@ -34,7 +34,6 @@ export const getResolver = async (name) => {
     console.log('getResolver: ', name, err);
     return 'getResolver error';
   }
-
 }
 
 export const owner = async (name) => {
@@ -46,4 +45,3 @@ export const owner = async (name) => {
     return 'owner error';
   }
 }
-
