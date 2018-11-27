@@ -10,7 +10,6 @@ let registry = null;
 const getQcnsRegistryAddress = (networkId = '1') => {
   switch (networkId) {
     case '1':
-
       return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
     case '3':
       return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
