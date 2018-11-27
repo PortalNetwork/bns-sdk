@@ -1,0 +1,9 @@
+POST https://api.nel.group/api/mainnet
+Content-Type: application/json
+
+{
+	"jsonrpc": "2.0",
+	"method": "getblock",
+	"params": [1000],
+	"id": "1"
+}
