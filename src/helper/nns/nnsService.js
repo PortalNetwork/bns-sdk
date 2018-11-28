@@ -7,11 +7,11 @@ let provider = null;
 const NNS = (networkId = 'testnet') => {
   switch (networkId) {
     case 'mainnet':
-      return '0x0';
+      return '';
     case 'testnet':
       return 'c7550e4622313628e61e7b8db13cfdcc4cb55eb9';
 default:
-      return '0x0';
+      return '';
   }
 };
 
