@@ -1,18 +1,18 @@
 const EthereumClassic = require("../../../lib/BNS").EthereumClassic
 const ethereumClassic = new EthereumClassic({
 	restURL: 'https://etc-parity.0xinfra.com',
-	networkId: '1'
+	networkId: '3'
 })
 
-async function getAddress() {
+async function getMultihash() {
 	try {
-		const addr = await ethereumClassic.EthereumClassicNameService.getAddress("portalnetwork.etc");
-		console.log(addr);
+		const multihash = await ethereumClassic.EthereumClassicNameService.getMultihash("portalnetwork.etc")
+		console.log(multihash);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)
 		throw err
 	}
 }
 
-getAddress();
+getMultihash();
 

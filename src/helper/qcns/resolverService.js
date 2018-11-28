@@ -6,6 +6,13 @@ const namehash = require('eth-ens-namehash');
 let web3 = new Web3();
 let resolver = null;
 
+const supportInterface = (interfaceType) => {
+  switch(interfaceType){
+    case "multihash":
+      return "0xe89401a1";
+  }
+}
+
 export const resolverInit = (provider, resolverAddr) => {
   if(!resolver || !web3.currentProvider){
     QuarkChain.injectWeb3(web3, provider);
@@ -13,7 +20,6 @@ export const resolverInit = (provider, resolverAddr) => {
     resolver = new Resolver(web3, resolverAddr);
   }
 }
-
 
 /**
  * 
@@ -57,16 +63,13 @@ export const getAddress = async (name) => {
   }
 }
 
-/**
- * 
- * @param {*} support 
- */
-export const getSupportsInterface = async (support) => {
+export const getSupportsInterface = async (interfaceType) => {
   try {
-    const isSupport = await resolver.supportsInterface(support);
+    const interfaceId = supportInterface(interfaceType)
+    const isSupport = await resolver.supportsInterface(interfaceId);
     return isSupport;
   } catch (err) {
-    console.log('getSupportsInterface: ', support, err);
+    console.log('getSupportsInterface: ', err);
     return 'getSupportsInterface not found';
   }
 }

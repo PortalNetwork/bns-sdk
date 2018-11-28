@@ -4,15 +4,15 @@ const ethereum = new Ethereum({
 	networkId: '3'
 })
 
-async function getResolver() {
+async function getMultihash() {
 	try {
-		const resolver = await ethereum.EthereumNameService.getResolver("mikenumber1.eth")
-		console.log(resolver);
+		const multihash = await ethereum.EthereumNameService.getMultihash("iwannabid.eth")
+		console.log(multihash);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)
 		throw err
 	}
 }
 
-getResolver();
+getMultihash();
 
