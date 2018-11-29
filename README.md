@@ -16,7 +16,16 @@ npm install bns-sdk --save
 ```
 
 ## 📝 Usage
+- [Ethereum Name Service](#Ethereum-Name-Service)
+  * [Class: EthereumNameService](#Class:-EthereumNameService)
+    * [EthereumNameService.getResolver(node)](#EthereumNameService.getResolver(node))
+    * [EthereumNameService.getAddress(node)](#EthereumNameService.getAddress(node))
+    * [EthereumNameService.getContent(node)](#EthereumNameService.getContent(node))
+    * [EthereumNameService.getMultihash(node)](#EthereumNameService.getMultihash(node))
+    
 
+##  Ethereum Name Service
+Include the module you need.
 ```javascript
 const Ethereum = require("../../lib/BNS").Ethereum
 const ethereum = new Ethereum({
@@ -24,12 +33,9 @@ const ethereum = new Ethereum({
 })
 ```
 
-## 📍 Ethereum Name Service
-
-### Get Resolver
-Return information about address
-
-#### Example
+### Class: EthereumNameService
+EthereumNameService allows users to resolve a domain name and get the context, address or multihash related to it.
+The following exapmle shows how to get resolver of a domain.
 ```javascript
 (async () => {
   try {
@@ -40,6 +46,30 @@ Return information about address
   }
 })()
 ```
+
+#### EthereumNameService.getResolver(node)
+- `node`: a domain name you want to look up.
+- Return: the resolver address of the domain.
+
+The function allows users to loop up domain's resolver address.
+
+#### EthereumNameService.getAddress(node)
+- `node`: a domain name you want to look up.
+- Return: the binded address of the domain.
+
+The function allows users to loop up domain's binded address.
+
+#### EthereumNameService.getContent(node)
+- `node`: a domain name you want to look up.
+- Return: the binded content of the domain.
+
+The function allows users to loop up domain's binded content.
+
+#### EthereumNameService.getMultihash(node)
+- `node`: a domain name you want to look up.
+- Return: the binded multihash of the domain.
+
+The function allows users to loop up domain's binded multihash.
 
 ## 📣 Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to help out.

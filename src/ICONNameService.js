@@ -6,7 +6,6 @@ import {
 import {
   resolverInit,
   getAddress,
-  getContent,
   getMultihash
 } from "./helper/ins/resolverService";
 

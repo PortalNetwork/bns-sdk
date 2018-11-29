@@ -390,7 +390,7 @@ Resolver.prototype.addr = function(name, callback) {
  */
 Resolver.prototype.supportsInterface = function(interfaceId, callback) {
 	return this.resolverPromise.then(function(resolver) {
-	  return resolver.supportsInterfaceAsync(interfaceId);
+		return resolver.supportsInterfaceAsync(interfaceId);
 	})
 }
 
