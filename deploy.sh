@@ -1,4 +1,4 @@
-git pull --rebase https://${GIT_ACCOUNT}:${GIT_PW}@github.com/PortalNetwork/bns-sdk.git master
+git status
 echo "Version update"
 npm version patch
 echo "Commit"
