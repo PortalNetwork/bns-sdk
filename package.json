@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
-    "test": "nyc --reporter=text mocha --require babel-core/register --timeout 5000"
+    "test": "nyc --reporter=text mocha --require babel-core/register --timeout 5000",
+    "lint": "eslint src/*"
   },
   "author": "Phyrex Tsai",
   "license": "MIT",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^10.5.2",
+    "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
     "eslint": "^5.5.0",
@@ -38,6 +40,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "flow-bin": "^0.81.0",
+    "jest": "^23.6.0",
     "mocha": "^5.2.0",
     "node-mocks-http": "^1.7.0",
     "nodemon": "^1.18.7",
@@ -45,5 +48,28 @@
     "prettier": "^1.14.3",
     "sinon": "^6.3.3",
     "supertest": "^3.3.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "arrow-body-style": [
+        "warn",
+        "always"
+      ],
+      "comma-dangle": [
+        "warn",
+        "never"
+      ],
+      "no-console": 0,
+      "no-unused-vars": [
+        "warn"
+      ]
+    }
   }
 }

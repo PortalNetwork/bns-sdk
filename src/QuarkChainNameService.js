@@ -47,7 +47,7 @@ class QuarkChainNameService {
     resolverInit(this.restURL, resolverAddr);
     const isSupportMultihash = await getSupportsInterface("multihash");
     if(isSupportMultihash){
-      const multihash = await getMultihash(name);
+      const multihash = await getMultihash(name, key);
       return multihash;
     }else{
       return "Not support multihash";

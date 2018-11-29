@@ -476,7 +476,7 @@ Resolver.prototype.content = function(name, callback) {
  */
 Resolver.prototype.multihash = function(name, callback) {
 	return this.resolverPromise.then(function(resolver) {
-	  return resolver.multihashAsync(name);
+		return resolver.multihashAsync(name);
 	})
 }
 
@@ -498,7 +498,7 @@ Resolver.prototype.addr = function(name, callback) {
  */
 Resolver.prototype.supportsInterface = function(interfaceId, callback) {
 	return this.resolverPromise.then(function(resolver) {
-	  return resolver.supportsInterfaceAsync(interfaceId);
+		return resolver.supportsInterfaceAsync(interfaceId);
 	})
 }
 

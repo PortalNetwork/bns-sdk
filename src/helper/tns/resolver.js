@@ -356,7 +356,7 @@ Resolver.prototype.content = function(name, callback) {
  */
 Resolver.prototype.multihash = function(name, key, callback) {
 	return this.resolverPromise.then(function(resolver) {
-	  return resolver.multihashAsync(name, key);
+		return resolver.multihashAsync(name, key);
 	})
 }
 
@@ -367,7 +367,7 @@ Resolver.prototype.multihash = function(name, key, callback) {
  */
 Resolver.prototype.supportsInterface = function(interfaceId, callback) {
 	return this.resolverPromise.then(function(resolver) {
-	  return resolver.supportsInterfaceAsync(interfaceId);
+		return resolver.supportsInterfaceAsync(interfaceId);
 	})
 }
 
