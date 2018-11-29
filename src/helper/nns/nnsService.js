@@ -1,10 +1,10 @@
 var neon = require('@cityofzion/neon-js')
 var Neon = neon.default
 var wallet = neon.wallet
-let provider = null;
-
+let endpoint = null;
+let NNS = null;
 // assign url
-const NNS = (networkId = 'testnet') => {
+const NNSAddr = (networkId = 'testnet') => {
   switch (networkId) {
     case 'mainnet':
       return '';
@@ -16,12 +16,13 @@ default:
 };
 
 export const nnsInit = (provider, networkId) => {
-    provider = new Provider(provider);
-    NNS(networkId);
+    endpoint = provider;
+    NNS = NNSAddr(networkId);
 }
 
 
 export const owner = async (name) => {
+  console.log(name)
   try {
     const script = {
       scriptHash: NNS, // parameter
@@ -29,12 +30,11 @@ export const owner = async (name) => {
       args: [Neon.u.str2hexstring(name)]
     };
     const ownerScript = Neon.create.script(script);
-    const res = await neon.rpc.Query.invokeScript(ownerScript)
-      .execute(provider) // parameter
-
+    const res = await neon.rpc.Query.invokeScript(ownerScript).execute(endpoint) // parameter
     const obj = JSON.stringify(res);
     const str = JSON.parse(obj);
     const addrScript = str.result.stack[0].value
+    console.log(addrScript)
     if (addrScript.length != 40) {
       console.log("Domain not register yet!")
       return
@@ -57,12 +57,15 @@ export const getAddress = async (name) => {
       args: [Neon.u.str2hexstring(name)]
     };
     const ownerScript = Neon.create.script(script);
-    const res = await neon.rpc.Query.invokeScript(ownerScript)
-      .execute(provider) // parameter
-
+    console.log('provider:',endpoint)
+    const res = await neon.rpc.Query.invokeScript(ownerScript).execute(endpoint)
+     // parameter
+    console.log("res",res)
     const obj = JSON.stringify(res);
+    console.log("obj:",obj)
     const str = JSON.parse(obj);
     const addrScript = str.result.stack[0].value
+    console.log("addrScript:",addrScript)
     if (addrScript.length != 40) {
       console.log("Domain not register yet!")
       return
@@ -72,7 +75,7 @@ export const getAddress = async (name) => {
     return result
   } catch (err) {
     console.log('address: ', name, err);
-    return 'owner error';
+    return 'address error';
   }
 }
 
@@ -86,12 +89,14 @@ export const getIPFS = async (name) => {
     };
     const IPFSScript = Neon.create.script(script);
     const res = await neon.rpc.Query.invokeScript(IPFSScript)
-      .execute(provider) // parameter
+      .execute(endpoint) // parameter
+    console.log("res:",res)
 
     const obj = JSON.stringify(res);
     const str = JSON.parse(obj);
     var IPFSHex = str.result.stack[0].value
-    if (IPFSHex.length = 0) {
+    console.log("IPFS:",IPFSHex)
+    if (IPFSHex === '') {
       console.log("No IPFS Hash");
       return
     }
