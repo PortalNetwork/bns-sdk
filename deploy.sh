@@ -1,5 +1,4 @@
 git checkout deploy.sh
-git pull --rebase https://${GIT_ACCOUNT}:${GIT_PW}@github.com/PortalNetwork/bns-sdk.git master
 echo "Version update"
 npm version patch
 echo "Commit"
