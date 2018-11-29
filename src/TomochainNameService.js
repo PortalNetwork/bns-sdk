@@ -6,7 +6,9 @@ import {
 import {
   resolverInit,
   getAddress,
-  getContent
+  getContent,
+  getMultihash,
+  getSupportsInterface
 } from "./helper/tns/resolverService";
 class TomochainNameService {
   // Provider URL
@@ -36,6 +38,19 @@ class TomochainNameService {
     resolverInit(this.restURL, resolverAddr);
     const content = await getContent(name);
     return content;
+  }
+
+  async getMultihash(name, key) {
+    registryInit(this.restURL, this.networkId);
+    const resolverAddr = await getResolver(name);
+    resolverInit(this.restURL, resolverAddr);
+    const isSupportMultihash = await getSupportsInterface("multihash");
+    if(isSupportMultihash){
+      const multihash = await getMultihash(name);
+      return multihash;
+    }else{
+      return "Not support multihash";
+    }
   }
 }
 

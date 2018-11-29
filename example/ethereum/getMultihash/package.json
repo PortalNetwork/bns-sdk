@@ -1,0 +1,16 @@
+{
+    "name": "multihash",
+    "version": "1.0.0",
+    "description": "multihash",
+    "main": "multihash.js",
+    "scripts": {
+      "test": "echo no tests yet",
+      "start": "node multihash.js"
+    },
+    "keywords": [
+      "bns",
+      "example"
+    ],
+    "license": "MIT"
+  }
+  

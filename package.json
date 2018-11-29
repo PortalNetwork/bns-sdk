@@ -13,6 +13,7 @@
   "author": "Phyrex Tsai",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",

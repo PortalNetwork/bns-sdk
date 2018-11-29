@@ -4,15 +4,15 @@ const ethereumClassic = new EthereumClassic({
 	networkId: '1'
 })
 
-async function getContent() {
+async function getMultihash() {
 	try {
-		const content = await ethereumClassic.EthereumClassicNameService.getContent("portalnetwork.etc")
-		console.log(content);
+		const multihash = await ethereumClassic.EthereumClassicNameService.getMultihash("portalnetwork.etc")
+		console.log(multihash);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)
 		throw err
 	}
 }
 
-getContent();
+getMultihash();
 
