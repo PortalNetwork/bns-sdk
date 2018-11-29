@@ -1,7 +1,7 @@
 const EthereumClassic = require("../../../lib/BNS").EthereumClassic
 const ethereumClassic = new EthereumClassic({
 	restURL: 'https://etc-parity.0xinfra.com',
-	networkId: '3'
+	networkId: '1'
 })
 
 async function getContent() {
