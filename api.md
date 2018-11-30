@@ -45,7 +45,8 @@ Include the module you need. Initialize it with endpoint and specify the network
 ```javascript
 const Ethereum = require("../../lib/BNS").Ethereum
 const ethereum = new Ethereum({
-  restURL: `https://mainnet.infura.io`
+  restURL: `https://mainnet.infura.io`,
+	networkId: '1'
 })
 ```
 - `networkId`: 
