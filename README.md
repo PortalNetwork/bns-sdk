@@ -18,10 +18,10 @@ npm install bns-sdk --save
 ## 📝 Usage
 * [Ethereum Name Service](#Ethereum-Name-Service)
   * [Class: EthereumNameService](#Class-EthereumNameService)
-    * [EthereumNameService.getResolver(node)](#EthereumNameService.getResolver(node))
-    * [EthereumNameService.getAddress(node)](#EthereumNameService.getAddress(node))
-    * [EthereumNameService.getContent(node)](#EthereumNameService.getContent(node))
-    * [EthereumNameService.getMultihash(node)](#EthereumNameService.getMultihash(node))
+    * [EthereumNameService.getResolver(node)](#EthereumNameservicegetresolvernode)
+    * [EthereumNameService.getAddress(node)](#EthereumNameServicegetAddressnode)
+    * [EthereumNameService.getContent(node)](#EthereumNameServicegetContentnode)
+    * [EthereumNameService.getMultihash(node)](#EthereumNameServicegetMultihashnode)
 * [API Doc](./api.md)
 
 ##  Ethereum Name Service
