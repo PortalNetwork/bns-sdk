@@ -37,10 +37,8 @@
     * [TomochainNameService.getMultihash(node, key)](#TomochainNameServicegetMultihashnode-key)
 * [NEO Name Service](#NEO-Name-Service)
   * [Class: NEONameService](#Class-NEONameService)
-    * [NEONameService.getResolver(node)](#NEONameServicegetResolvernode)
     * [NEONameService.getAddress(node)](#NEONameServicegetAddressnode)
-    * [NEONameService.getContent(node)](#NEONameServicegetContentnode)
-    * [NEONameService.getMultihash(node, key)](#NEONameServicegetMultihashnode-key)
+    * [NEONameService.getIPFS(node)](#NEONameServicegetIPFSnode)
 
 ##  Ethereum Name Service
 Include the module you need.
