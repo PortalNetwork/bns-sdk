@@ -6,7 +6,7 @@ const ethereum = new Ethereum({
 
 async function getResolver() {
 	try {
-		const resolver = await ethereum.EthereumNameService.getResolver("portalnetwork.eth")
+		const resolver = await ethereum.EthereumNameService.getResolver("mikenumber1.eth")
 		console.log(resolver);
 	} catch (err) {
 		console.error(`Error in getInfo: `, err)
