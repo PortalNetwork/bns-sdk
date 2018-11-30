@@ -16,23 +16,26 @@ npm install bns-sdk --save
 ```
 
 ## 📝 Usage
-- [Ethereum Name Service](#Ethereum-Name-Service)
-  * [Class: EthereumNameService](#Class:-EthereumNameService)
-    * [EthereumNameService.getResolver(node)](#EthereumNameService.getResolver(node))
-    * [EthereumNameService.getAddress(node)](#EthereumNameService.getAddress(node))
-    * [EthereumNameService.getContent(node)](#EthereumNameService.getContent(node))
-    * [EthereumNameService.getMultihash(node)](#EthereumNameService.getMultihash(node))
-    
+* [Ethereum Name Service](#Ethereum-Name-Service)
+  * [Class: EthereumNameService](#Class-EthereumNameService)
+    * [EthereumNameService.getResolver(node)](#EthereumNameservicegetresolvernode)
+    * [EthereumNameService.getAddress(node)](#EthereumNameServicegetAddressnode)
+    * [EthereumNameService.getContent(node)](#EthereumNameServicegetContentnode)
+    * [EthereumNameService.getMultihash(node)](#EthereumNameServicegetMultihashnode)
+* [API Doc](./api.md)
 
 ##  Ethereum Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const Ethereum = require("../../lib/BNS").Ethereum
 const ethereum = new Ethereum({
-  restURL: `https://mainnet.infura.io`
+  restURL: `https://mainnet.infura.io`,
+	networkId: '3'
 })
 ```
-
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: EthereumNameService
 EthereumNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -51,25 +54,25 @@ The following exapmle shows how to get resolver of a domain.
 - `node`: a domain name you want to look up.
 - Return: the resolver address of the domain.
 
-The function allows users to loop up domain's resolver address.
+The function allows users to look up domain's resolver address.
 
 #### EthereumNameService.getAddress(node)
 - `node`: a domain name you want to look up.
 - Return: the binded address of the domain.
 
-The function allows users to loop up domain's binded address.
+The function allows users to look up domain's binded address.
 
 #### EthereumNameService.getContent(node)
 - `node`: a domain name you want to look up.
 - Return: the binded content of the domain.
 
-The function allows users to loop up domain's binded content.
+The function allows users to look up domain's binded content.
 
 #### EthereumNameService.getMultihash(node)
 - `node`: a domain name you want to look up.
 - Return: the binded multihash of the domain.
 
-The function allows users to loop up domain's binded multihash.
+The function allows users to look up domain's binded multihash.
 
 ## 📣 Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to help out.
