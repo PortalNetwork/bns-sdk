@@ -16,8 +16,8 @@ npm install bns-sdk --save
 ```
 
 ## 📝 Usage
-- [Ethereum Name Service](#Ethereum-Name-Service)
-  * [Class:EthereumNameService](#Class:EthereumNameService)
+* [Ethereum Name Service](#Ethereum-Name-Service)
+  * [Class: EthereumNameService](#Class-EthereumNameService)
     * [EthereumNameService.getResolver(node)](#EthereumNameService.getResolver(node))
     * [EthereumNameService.getAddress(node)](#EthereumNameService.getAddress(node))
     * [EthereumNameService.getContent(node)](#EthereumNameService.getContent(node))
@@ -33,7 +33,7 @@ const ethereum = new Ethereum({
 })
 ```
 
-### Class:EthereumNameService
+### Class: EthereumNameService
 EthereumNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
 ```javascript
