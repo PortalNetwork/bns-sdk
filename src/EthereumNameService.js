@@ -7,7 +7,8 @@ import {
   resolverInit,
   getAddress,
   getMultihash,
-  getContent
+  getContent,
+  getSupportsInterface
 } from "./helper/ens/resolverService";
 class EthereumNameService {
   // Provider URL
@@ -35,8 +36,13 @@ class EthereumNameService {
     registryInit(this.restURL, this.networkId);
     const resolverAddr = await getResolver(name);
     resolverInit(this.restURL, resolverAddr);
-    const multihash = await getMultihash(name);
-    return multihash;
+    const isSupportMultihash = await getSupportsInterface("multihash");
+    if(isSupportMultihash){
+      const multihash = await getMultihash(name);
+      return multihash;
+    }else{
+      return "Not support multihash";
+    }
   }
 
   async getContent(name) {
