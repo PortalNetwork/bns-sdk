@@ -14,3 +14,10 @@ jobs:
         - |
           chmod +x deploy.sh
           ./deploy.sh
+    - stage: deploy
+      provider: npm
+      email: "bill@portal.network"
+      api_key:
+        secure: ${NPM_API_KEY}
+      on:
+        branch: master
