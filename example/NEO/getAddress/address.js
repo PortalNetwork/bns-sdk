@@ -1,7 +1,7 @@
 const NEO = require("../../../lib/BNS").NEO
 const neo = new NEO({
 	restURL: 'https://test1.cityofzion.io:443',
-	networkId: 'testnet'
+	networkId: '3'
 })
 
 

@@ -41,13 +41,16 @@
     * [NEONameService.getIPFS(node)](#NEONameServicegetIPFSnode)
 
 ##  Ethereum Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const Ethereum = require("../../lib/BNS").Ethereum
 const ethereum = new Ethereum({
   restURL: `https://mainnet.infura.io`
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: EthereumNameService
 EthereumNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -87,7 +90,7 @@ The function allows users to look up domain's binded content.
 The function allows users to look up domain's binded multihash.
 
 ##  Ethereum Classic Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const EthereumClassic = require("../../../lib/BNS").EthereumClassic
 const ethereumClassic = new EthereumClassic({
@@ -95,6 +98,9 @@ const ethereumClassic = new EthereumClassic({
 	networkId: '1'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: EthereumClassicNameService
 EthereumClassicNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -134,7 +140,7 @@ The function allows users to look up domain's binded content.
 The function allows users to look up domain's binded multihash.
 
 ##  Wanchain Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const Wanchain = require("../../../lib/BNS").Wanchain
 const wanchain = new Wanchain({
@@ -142,6 +148,9 @@ const wanchain = new Wanchain({
 	networkId: '3'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: WanchainNameService
 WanchainNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -181,7 +190,7 @@ The function allows users to look up domain's binded content.
 The function allows users to look up domain's binded multihash.
 
 ##  QuarkChain Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const QuarkChain = require("../../../lib/BNS").QuarkChain
 const quarkChain = new QuarkChain({
@@ -189,6 +198,9 @@ const quarkChain = new QuarkChain({
 	networkId: '3'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: QuarkChainNameService
 QuarkChainNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -229,7 +241,7 @@ The function allows users to look up domain's binded content.
 The function allows users to look up domain's binded multihash.
 
 ##  ICON Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const ICON = require("../../../lib/BNS").ICON
 const Icon = new ICON({
@@ -237,6 +249,9 @@ const Icon = new ICON({
 	networkId: '3'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: ICONNameService
 ICONNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -272,7 +287,7 @@ The function allows users to look up domain's binded multihash.
 
 
 ##  Tomochain Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const Tomochain = require("../../../lib/BNS").Tomochain
 const tomochain = new Tomochain({
@@ -280,6 +295,9 @@ const tomochain = new Tomochain({
 	networkId: '3'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: TomochainNameService
 TomochainNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
@@ -320,7 +338,7 @@ The function allows users to look up domain's binded content.
 The function allows users to look up domain's binded multihash.
 
 ##  NEO Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const NEO = require("../../../lib/BNS").NEO
 const neo = new NEO({

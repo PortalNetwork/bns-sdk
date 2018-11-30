@@ -4,11 +4,11 @@ var wallet = neon.wallet
 let endpoint = null;
 let NNS = null;
 // assign url
-const NNSAddr = (networkId = 'testnet') => {
+const NNSAddr = (networkId = '3') => {
   switch (networkId) {
-    case 'mainnet':
+    case '1':
       return '';
-    case 'testnet':
+    case '3':
       return 'c7550e4622313628e61e7b8db13cfdcc4cb55eb9';
 default:
       return '';

@@ -25,13 +25,17 @@ npm install bns-sdk --save
 * [API Doc](./api.md)
 
 ##  Ethereum Name Service
-Include the module you need.
+Include the module you need. Initialize it with endpoint and specify the network ID.
 ```javascript
 const Ethereum = require("../../lib/BNS").Ethereum
 const ethereum = new Ethereum({
-  restURL: `https://mainnet.infura.io`
+  restURL: `https://mainnet.infura.io`,
+	networkId: '3'
 })
 ```
+- `networkId`: 
+  - `1`: The endpoint is main net.
+  - `3`: The endpoint is test net.
 ### Class: EthereumNameService
 EthereumNameService allows users to resolve a domain name and get the context, address or multihash related to it.
 The following exapmle shows how to get resolver of a domain.
