@@ -14,12 +14,13 @@ jobs:
         - |
           chmod +x deploy.sh
           ./deploy.sh
-    - stage: deploy
+    - stage: npm release
       if: type = push AND branch = master
       node_js: 6
-      provider: npm
-      email: "bill@portal.network"
-      api_key:
-        secure: ${NPM_API_KEY}
-      on:
-        branch: master
+      deploy:
+        provider: npm
+        email: "bill@portal.network"
+        api_key:
+          secure: ${NPM_API_KEY}
+        on:
+          branch: master
