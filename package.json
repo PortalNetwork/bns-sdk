@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
-    "test": "nyc --reporter=text mocha --require babel-core/register --timeout 5000",
+    "test": "jest --coverage",
     "lint": "eslint src/*"
   },
   "author": "Phyrex Tsai",

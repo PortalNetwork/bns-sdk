@@ -14,9 +14,10 @@ const supportInterface = (interfaceType) => {
 }
 
 export const resolverInit = (provider, resolverAddr) => {
-  if(!resolver || !web3.currentProvider){
+  if(!web3.qkc){
     QuarkChain.injectWeb3(web3, provider);
-    //web3.setProvider(new web3.providers.HttpProvider(provider));
+  }
+  if(!resolver){
     resolver = new Resolver(web3, QuarkChain.getQkcAddressFromEthAddress(resolverAddr));
   }
 }
