@@ -16,6 +16,7 @@ jobs:
           ./deploy.sh
     - stage: deploy
       if: type = push AND branch = master
+      node_js: 6
       provider: npm
       email: "bill@portal.network"
       api_key:
