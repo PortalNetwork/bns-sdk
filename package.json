@@ -21,6 +21,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "bluebird": "^3.5.3",
     "buffer": "^5.1.0",
     "eth-ens-namehash": "^2.0.8",
     "ethereumjs-abi": "^0.6.5",
