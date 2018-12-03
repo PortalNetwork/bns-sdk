@@ -19,7 +19,7 @@ jobs:
       node_js: 6
       deploy:
         provider: npm
-        email: "bill@portal.network"
+        email: ${NPM_EMAIL}
         api_key:
           secure: ${NPM_API_KEY}
         on:
