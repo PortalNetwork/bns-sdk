@@ -18,9 +18,10 @@ const getQcnsRegistryAddress = (networkId = '1') => {
   }
 };
 export const registryInit = (provider, networkId) => {
-  if(!registry || !web3.currentProvider){
+  if(!web3.qkc){
     QuarkChain.injectWeb3(web3, provider);
-    //web3.setProvider(new web3.providers.HttpProvider(provider));
+  }
+  if(!registry){
     registry = new Registry(web3, getQcnsRegistryAddress(networkId));
   }
 }
