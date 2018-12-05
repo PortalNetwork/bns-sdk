@@ -10,17 +10,18 @@ let registry = null;
 const getQcnsRegistryAddress = (networkId = '1') => {
   switch (networkId) {
     case '1':
-      return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
+      return '0x4b94640a5503f59f5A7a263769eFC1a4692CCD03f05d8fc2';
     case '3':
-      return '0x9799D981FC2e0445aEeF29F6533b199bB7650f2cf05d8fc2';
+      return '0x4b94640a5503f59f5A7a263769eFC1a4692CCD03f05d8fc2';
     default:
       return '0x0';
   }
 };
 export const registryInit = (provider, networkId) => {
-  if(!registry || !web3.currentProvider){
+  if(!web3.qkc){
     QuarkChain.injectWeb3(web3, provider);
-    //web3.setProvider(new web3.providers.HttpProvider(provider));
+  }
+  if(!registry){
     registry = new Registry(web3, getQcnsRegistryAddress(networkId));
   }
 }

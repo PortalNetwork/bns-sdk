@@ -3,20 +3,21 @@ jobs:
   include:
     - stage: test
       if: type = pull_request AND branch = develop
-      node_js: 6
+      node_js: 8
       script:  
         - |
           npm run lint
+          npm test
     - stage: deploy
       if: type = push AND branch = develop
-      node_js: 6
+      node_js: 8
       script:  
         - |
           chmod +x deploy.sh
           ./deploy.sh
     - stage: npm release
       if: type = push AND branch = master
-      node_js: 6
+      node_js: 8
       deploy:
         provider: npm
         email: ${NPM_EMAIL}

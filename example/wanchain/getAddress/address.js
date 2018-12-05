@@ -1,7 +1,7 @@
 const Wanchain = require("../../../lib/BNS").Wanchain
 const wanchain = new Wanchain({
-	restURL: 'http://wanchain-testnet.portal.network',
-	networkId: '3'
+	restURL: 'http://wanchain.portal.network',
+	networkId: '1'
 })
 
 async function getAddress() {

@@ -5,6 +5,7 @@ import WanchainNameService from "./WanchainNameService"
 import QuarkChainNameService from "./QuarkChainNameService"
 import TomochainNameService from "./TomochainNameService"
 import ICONNameService from "./ICONNameService"
+import NEONameService from "./NEONameService"
 
 export class Ethereum {
   constructor(config) {
@@ -86,5 +87,18 @@ export class ICON {
       this.walletAddr = "hxbe258ceb872e08851f1f59694dac2558708ece11";
     }
     this.ICONNameService = new ICONNameService(this.restURL, this.networkId, this.walletAddr)
+  }
+}
+
+export class NEO {
+  constructor(config) {
+    if (config && config.restURL && config.restURL !== "") {
+      this.restURL = config.restURL
+      this.networkId = config.networkId;
+    } else {
+      this.restURL = "https://test1.cityofzion.io:443"
+      this.networkId = '3';
+    }
+    this.NEONameService = new NEONameService(this.restURL, this.networkId)
   }
 }
