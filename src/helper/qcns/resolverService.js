@@ -1,8 +1,7 @@
 import Resolver from './resolver';
 import QuarkChain from 'quarkchain-web3';
-const abi = require('ethereumjs-abi');
-const Web3 = require('web3');
-const namehash = require('eth-ens-namehash');
+import Web3 from 'web3';
+import namehash from 'eth-ens-namehash';
 let web3 = new Web3();
 let resolver = null;
 
@@ -18,7 +17,7 @@ export const resolverInit = (provider, resolverAddr) => {
     QuarkChain.injectWeb3(web3, provider);
   }
   if(!resolver){
-    resolver = new Resolver(web3, QuarkChain.getQkcAddressFromEthAddress(resolverAddr));
+    resolver = new Resolver(web3, resolverAddr);
   }
 }
 
