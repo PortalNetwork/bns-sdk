@@ -11,7 +11,7 @@ const getEnsRegistryAddress = (networkId = '1') => {
     case '1':
       return '0x314159265dD8dbb310642f98f50C066173C1259b';
     case '3':
-      return '0x112234455c3a32fd11230c42e7bccd4a84e02010';
+      return '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e';
     default:
       return '0x0';
   }
